@@ -136,9 +136,6 @@ def makeMove(board, tile, xstart, ystart):
 # Player
 def getPlayerMove(board, playerTile):
     DIGITS= "1 2 3 4 5 6 7 8".split()
-    # CHAR= {
-    #     "a":1, "b":2, "c":3, "d":4, "e":5, "f":6, "g":7, "h":8
-    # }
 
     while True:
         move= input('Enter your move, "quit" to end game, or "hints" to toggle hints.\n').lower()
@@ -147,10 +144,6 @@ def getPlayerMove(board, playerTile):
             return move
 
         if len(move)==2 and move[0] in DIGITS and move[1] in DIGITS:
-            # for num in CHAR:
-            #     if move[0]==num: 
-            #         x= int(CHAR[num])-1
-            #         break
             x= int(move[0])-1
             y= int(move[1])-1
             if isValidMove(board, playerTile, x, y)==False:
